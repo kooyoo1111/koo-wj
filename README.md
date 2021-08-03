@@ -5,19 +5,15 @@
 ![lisense](https://img.shields.io/github/license/Antabot/White-Jotter)
 ![release](https://img.shields.io/github/v/release/Antabot/White-Jotter)
 
-
 这是一个简单的前后端分离项目，主要采用 Vue.js + SpringBoot 技术栈开发。
 
 除了用作入门练习，我还希望该项目可以作为一些常见 Web 项目的脚手架，帮助大家简化搭建网站的流程。之所以叫白卷，是因为它从 0 开始，会随着时间的推移逐渐完善。
 
 https://github.com/Antabot/White-Jotter)
 
-
 感谢 JetBrains 提供全家桶开源许可，IDEA 确实是 Java 领域最好用的 IDE。
 
 <a href="https://www.jetbrains.com/?from=White-Jotter"><img src="https://i.loli.net/2020/06/15/wfyV6jGX8F9RPhB.png" width = "200" height = "216" alt="" align=center /></a>
-
-如果大家对 0 前端代码快速开发企业级后台管理系统感兴趣，可以关注 [【Erupt Framework 🚀 通用后台管理项目】](https://github.com/erupts/erupt)
 
 # 整体效果
 
@@ -63,7 +59,7 @@ https://github.com/Antabot/White-Jotter)
 
 1.Vue.js  
 2.ElementUI  
-3.axios   
+3.axios
 
 ## 后端
 
@@ -86,19 +82,19 @@ https://github.com/Antabot/White-Jotter)
 
 2.在 mysql 中创建数据库 `wj`，运行项目，将自动注入数据。如需关闭此功能，请将 `application.properties` 中的 `spring.datasource.initialization-mode=always` 代码删除。
 
-数据库完整脚本 `wj.sql` 放在后端项目的 `src\main\resources` 目录下，也可根据需要自行在 MySQL 中执行数据库脚本。  
+数据库完整脚本 `wj.sql` 放在后端项目的 `src\main\resources` 目录下，也可根据需要自行在 MySQL 中执行数据库脚本。
 
 运行项目前请启动 Redis 服务，端口为 6379（默认端口），密码为空。
 
-3.数据库配置在后端项目的 `src\main\resources` 目录下的`application.properties` 文件中，mysql 版本为 8.0.15   。
+3.数据库配置在后端项目的 `src\main\resources` 目录下的`application.properties` 文件中，mysql 版本为 8.0.15 。
 
-4.在IntelliJ IDEA中运行后端项目，为了保证项目成功运行，可以右键点击 `pom.xml` 选择 maven -> reimport ，并重启项目
+4.在 IntelliJ IDEA 中运行后端项目，为了保证项目成功运行，可以右键点击 `pom.xml` 选择 maven -> reimport ，并重启项目
 
 至此，服务端就启动成功了，同时，运行前端项目，访问 `http://localhost:8080` ，即可进入登录页面，默认账号是 `admin`，密码是 `123`
 
 如果要做二次开发，请继续看第五、六步。
 
-5.进入前端项目根目录中，在命令行依次输入如下命令：  
+5.进入前端项目根目录中，在命令行依次输入如下命令：
 
 ```
 # 安装依赖
@@ -109,9 +105,9 @@ npm run dev
 
 ```
 
-由于在 `wj-vue` 项目中已经配置了端口转发，将数据转发到SpringBoot上，因此项目启动之后，在浏览器中输入 `http://localhost:8080` 就可以访问我们的前端项目了，所有的请求通过端口转发将数据传到 SpringBoot 中（注意此时不要关闭 SpringBoot 项目）。
+由于在 `wj-vue` 项目中已经配置了端口转发，将数据转发到 SpringBoot 上，因此项目启动之后，在浏览器中输入 `http://localhost:8080` 就可以访问我们的前端项目了，所有的请求通过端口转发将数据传到 SpringBoot 中（注意此时不要关闭 SpringBoot 项目）。
 
-6.最后可以用 `WebStorm` 等工具打开 `wj-vue`项目，继续开发，开发完成后，当项目要上线时，依然进入到 `wj-vue` 目录，然后执行如下命令：  
+6.最后可以用 `WebStorm` 等工具打开 `wj-vue`项目，继续开发，开发完成后，当项目要上线时，依然进入到 `wj-vue` 目录，然后执行如下命令：
 
 ```
 npm run build
@@ -123,7 +119,7 @@ npm run build
 
 # 教程
 
-我在 CSDN 上分享了开发这个项目的教程，有兴趣的小伙伴可以点击下面的链接查看。  
+我在 CSDN 上分享了开发这个项目的教程，有兴趣的小伙伴可以点击下面的链接查看。
 
 1.[项目简介](https://blog.csdn.net/Neuf_Soleil/article/details/88925013)
 
@@ -173,7 +169,7 @@ npm run build
 
 ---
 
-## 2019 
+## 2019
 
 12-01 实现功能级权限控制  
 11-30 利用 vue-elment-admin 项目完善后台界面设计  
