@@ -5,15 +5,8 @@
 ![lisense](https://img.shields.io/github/license/Antabot/White-Jotter)
 ![release](https://img.shields.io/github/v/release/Antabot/White-Jotter)
 
-这是一个简单的前后端分离项目，主要采用 Vue.js + SpringBoot 技术栈开发。
-
-除了用作入门练习，我还希望该项目可以作为一些常见 Web 项目的脚手架，帮助大家简化搭建网站的流程。之所以叫白卷，是因为它从 0 开始，会随着时间的推移逐渐完善。
-
-https://github.com/Antabot/White-Jotter)
-
-感谢 JetBrains 提供全家桶开源许可，IDEA 确实是 Java 领域最好用的 IDE。
-
-<a href="https://www.jetbrains.com/?from=White-Jotter"><img src="https://i.loli.net/2020/06/15/wfyV6jGX8F9RPhB.png" width = "200" height = "216" alt="" align=center /></a>
+基于RESTful前后端分离项目，主要采用 Vue.js + SpringBoot 技术栈开发。随意diy什么的最好玩了～
+感谢原开源项目 https://github.com/Antabot/White-Jotter ！
 
 # 整体效果
 
@@ -43,16 +36,6 @@ https://github.com/Antabot/White-Jotter)
 
 ![后台](https://img-blog.csdnimg.cn/20191202200516251.png)
 
-# 架构图
-
-- **应用架构**
-
-![应用架构](https://img-blog.csdnimg.cn/20200524211402855.JPG)
-
-- **技术架构**
-
-![技术架构](https://img-blog.csdnimg.cn/20200524211507112.JPG)
-
 # 主要技术栈
 
 ## 前端
@@ -78,7 +61,7 @@ https://github.com/Antabot/White-Jotter)
 
 1.clone 项目到本地
 
-`git clone https://github.com/Antabot/White-Jotter`
+`git clone git@github.com:kooyoo1111/koo-wj.git`
 
 2.在 mysql 中创建数据库 `wj`，运行项目，将自动注入数据。如需关闭此功能，请将 `application.properties` 中的 `spring.datasource.initialization-mode=always` 代码删除。
 
