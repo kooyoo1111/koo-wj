@@ -11,6 +11,33 @@
   </el-card>
 </template>
 
+<script>
+  export default {
+    name: 'Carousel',
+    data: function () {
+      return {
+        items: [{
+          id: 1,
+          title: 'Springboot - back-end framework',
+          img: '../../../static/img/carousel/Spring-logo.jpg',
+          link: 'https://spring.io/'},
+        {
+          id: 2,
+          title: 'Vue.js - 渐进式 JavaScript 框架',
+          img: '../../../static/img/carousel/vue.png',
+          link: 'https://cn.vuejs.org/'
+        },
+        {
+          id: 3,
+          title: 'element-ui - 网站快速成型工具',
+          img: '../../../static/img/carousel/element.png',
+          link: 'http://element-cn.eleme.io/#/zh-CN'
+        }]
+      }
+    }
+  }
+</script>
+
 <style>
   .el-carousel__item h3 {
     color: black;
@@ -46,30 +73,3 @@
     text-align: center;
   }
 </style>
-
-<script>
-  export default {
-    name: 'Carousel',
-    data: function () {
-      return {
-        items: [{
-          id: 1,
-          title: 'How2J.cn - Java 全栈学习网站',
-          img: '../../../static/img/carousel/how2j.png',
-          link: 'http://how2j.cn?p=50613'},
-        {
-          id: 2,
-          title: 'Vue.js - 渐进式 JavaScript 框架',
-          img: '../../../static/img/carousel/vue.png',
-          link: 'https://cn.vuejs.org/'
-        },
-        {
-          id: 3,
-          title: 'element-ui - 网站快速成型工具',
-          img: '../../../static/img/carousel/element.png',
-          link: 'http://element-cn.eleme.io/#/zh-CN'
-        }]
-      }
-    }
-  }
-</script>
