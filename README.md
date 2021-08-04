@@ -5,7 +5,7 @@
 ![lisense](https://img.shields.io/github/license/Antabot/White-Jotter)
 ![release](https://img.shields.io/github/v/release/Antabot/White-Jotter)
 
-感谢原开源项目 https://github.com/Antabot/White-Jotter
+感谢原开源 https://github.com/Antabot/White-Jotter
 基于RESTful前后端分离的博客项目，主要采用 Vue.js + SpringBoot 技术栈开发。做一点点随意diy～
 
 # 整体效果
