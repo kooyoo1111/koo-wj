@@ -6,34 +6,12 @@
     </div>
     <div class="block">
       <el-timeline>
-        <el-timeline-item timestamp="2019/4/13" placement="top">
+        <el-timeline-item v-for="article in articles" :key=article.id :timestamp=article.articleDate placement="top">
           <el-card>
-            <h4>实现上传至服务器和输入 URL 两种方式添加封面</h4>
-            <p>Evan 提交于 2019/4/13 21:32</p>
-          </el-card>
-        </el-timeline-item>
-        <el-timeline-item timestamp="2019/4/11" placement="top">
-          <el-card>
-            <h4>实现图书分类功能</h4>
-            <p>Evan 提交于 2019/4/11 09:02</p>
-          </el-card>
-        </el-timeline-item>
-        <el-timeline-item timestamp="2019/4/8" placement="top">
-          <el-card>
-            <h4>实现图书分页，修复图书添加的 BUG</h4>
-            <p>Evan 提交于 2019/4/8 22:10</p>
-          </el-card>
-        </el-timeline-item>
-        <el-timeline-item timestamp="2019/4/6" placement="top">
-          <el-card>
-            <h4>实现搜索框模糊查询</h4>
-            <p>Evan 提交于 2019/4/6 19:51</p>
-          </el-card>
-        </el-timeline-item>
-        <el-timeline-item timestamp="2019/4/5" placement="top">
-          <el-card>
-            <h4>实现图书修改功能</h4>
-            <p>Evan 提交于 2019/4/5 22:52</p>
+            <router-link class="article-link" :to="{path:'jotter/article',query:{id: article.id}}">
+              <h4>{{article.articleTitle}}</h4>
+            </router-link>
+            <p>published at {{article.articleDate}}</p>
           </el-card>
         </el-timeline-item>
       </el-timeline>
@@ -43,7 +21,28 @@
 
 <script>
   export default {
-    name: 'UpdateCard'
+    name: 'UpdateCard',
+    data () {
+      return {
+        articles: [],
+        pageSize: 4,
+        total: 0
+      }
+    },
+    mounted () {
+      this.loadArticles()
+    },
+    methods: {
+      loadArticles () {
+        var _this = this
+        this.$axios.get('/article/' + this.pageSize + '/1').then(resp => {
+          if (resp && resp.data.code === 200) {
+            _this.articles = resp.data.result.content
+            _this.total = resp.data.result.totalElements
+          }
+        })
+      },
+    }
   }
 </script>
 
