@@ -5,8 +5,8 @@
 ![lisense](https://img.shields.io/github/license/Antabot/White-Jotter)
 ![release](https://img.shields.io/github/v/release/Antabot/White-Jotter)
 
-基于RESTful前后端分离项目，主要采用 Vue.js + SpringBoot 技术栈开发。随意diy什么的最好玩了～
-感谢原开源项目 https://github.com/Antabot/White-Jotter ！
+基于RESTful前后端分离项目，主要采用 Vue.js + SpringBoot 技术栈开发。加一点随意diy～
+感谢原开源项目 https://github.com/Antabot/White-Jotter
 
 # 整体效果
 
