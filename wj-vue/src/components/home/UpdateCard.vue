@@ -41,7 +41,7 @@
             _this.total = resp.data.result.totalElements
           }
         })
-      },
+      }
     }
   }
 </script>

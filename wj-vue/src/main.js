@@ -223,4 +223,5 @@ new Vue({
     store,
     components: { App },
     template: '<App/>'
+        // eslint-disable-next-line eol-last
 })
