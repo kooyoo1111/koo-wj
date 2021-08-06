@@ -1,6 +1,6 @@
 <template>
   <div style="margin-top: 40px">
-    <!--<el-button @click="addArticle()">添加文章</el-button>-->
+    <!-- <el-button @click="addArticle()">添加文章</el-button> -->
     <div class="articles-area">
       <el-card style="text-align: left">
         <div v-for="article in articles" :key="article.id">
@@ -31,6 +31,7 @@
 
   export default {
     name: 'Articles',
+    //props: ['size', 'id'],
     data () {
       return {
         articles: [],
@@ -80,4 +81,5 @@
   .article-link:hover {
     color: #409EFF;
   }
+
 </style>

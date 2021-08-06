@@ -50,6 +50,8 @@
 
 <script>
   import ImgUpload from './ImgUpload'
+  import { formatTime, parseTime } from '../../../utils'
+  import dayjs from 'dayjs'
 
   export default {
     name: 'Editor',
@@ -67,11 +69,16 @@
     },
     methods: {
       saveArticles (value, render) {
+        //到底怎么获得当前时间啊阿啊
+        const d = new Date()
+        //now = dayjs(Date()).format("YYYY-MM-DD HH:mm:ss"),
+        //console.log(dayjs(Date()).format("YYYY-MM-DD HH:mm:ss"))
+        //console.log(parseTime(d.getTime()))
         // value 是 md，render 是 html
         this.$confirm('是否保存并发布文章?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
-          type: 'warning'
+          type: 'warning',
         }).then(() => {
             this.$axios
               .post('/admin/content/article', {
@@ -79,9 +86,9 @@
                 articleTitle: this.article.articleTitle,
                 articleContentMd: value,
                 articleContentHtml: render,
-                articleAbstract: this.article.articleAbstract,
+                articleAbstract: this.article.articleContentMd.substring(0,20),
                 articleCover: this.article.articleCover,
-                articleDate: this.article.articleDate
+                articleDate: d.getTime()
               }).then(resp => {
               if (resp && resp.data.code === 200) {
                 this.$message({

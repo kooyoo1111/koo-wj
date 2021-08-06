@@ -28,7 +28,8 @@ public class JotterArticleService {
         String key = "articlepage:" + page;
         Object articlePageCache = redisService.get(key);
 
-        if (articlePageCache == null) {
+        //从redis里面取值是没有更新过的啊，很怪，这里直接吧redis关了
+        if (articlePageCache == null || true) {
             Sort sort = new Sort(Sort.Direction.DESC, "id");
             Page<JotterArticle> articlesInDb = jotterArticleDAO.findAll(PageRequest.of(page, size, sort));
             articles = new MyPage<>(articlesInDb);
