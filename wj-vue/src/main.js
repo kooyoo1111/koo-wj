@@ -5,6 +5,8 @@ import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
 import 'echarts/theme/macarons.js'
 import store from './store'
+//第三方图标库
+import './assets/iconfont/iconfont.css'
 
 import {
     Pagination,
@@ -126,7 +128,11 @@ Vue.prototype.$notify = Notification
 Vue.prototype.$message = Message
 
 var axios = require('axios')
-axios.defaults.baseURL = 'http://localhost:8443/api'
+    //axios.defaults.baseURL = 'http://localhost:8443/api'
+    //axios.defaults.baseURL = 'https://lit-stream-62449.herokuapp.com/api'
+axios.defaults.baseURL = 'http://47.97.114.134:8443/api'
+    //axios.defaults.baseURL = 'http://172.19.28.204:8443/api'
+    //axios.defaults.baseURL = '/api'
     // 使请求带上凭证信息
 axios.defaults.withCredentials = true
 

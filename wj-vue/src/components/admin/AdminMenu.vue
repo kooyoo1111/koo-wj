@@ -24,17 +24,21 @@
 </template>
 
 <script>
+    import adminMenus from './AdminMenus'
+
     export default {
       name: 'AdminMenu',
       data () {
         return {
-          isCollapse: false
+          isCollapse: false,
+          adminMenus: adminMenus,
         }
       },
       computed: {
-        adminMenus () {
-          return this.$store.state.adminMenus
-        },
+        // adminMenus () {
+        //   adminMenus
+        //   //return this.$store.state.adminMenus
+        // },
         currentPath () {
           return this.$route.path
         }

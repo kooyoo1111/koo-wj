@@ -21,6 +21,7 @@ import javax.validation.Valid;
  * @author Evan
  * @date 2019/4
  */
+@CrossOrigin
 @RestController
 public class LoginController {
 

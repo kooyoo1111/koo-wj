@@ -50,6 +50,12 @@ export default new Router({
                     name: 'Library',
                     component: () =>
                         import ('../components/library/LibraryIndex')
+                },
+                {
+                    path: '/aboutMe',
+                    name: 'AboutMe',
+                    component: () =>
+                        import ('../components/home/AboutMe')
                 }
             ]
         },
@@ -74,14 +80,39 @@ export default new Router({
                 requireAuth: true
             },
             children: [{
-                path: '/admin/dashboard',
-                name: 'Dashboard',
-                component: () =>
-                    import ('../components/admin/dashboard/admin/index'),
-                meta: {
-                    requireAuth: true
-                }
-            }]
+                    path: '/admin/dashboard',
+                    name: 'Dashboard',
+                    component: () =>
+                        import ('../components/admin/dashboard/admin/index'),
+                    meta: {
+                        requireAuth: true
+                    }
+                },
+                {
+                    path: '/admin/content/article',
+                    name: 'ArticleManagement',
+                    component: () =>
+                        import ('../components/admin/content/ArticleManagement'),
+                },
+                {
+                    path: '/admin/content/book',
+                    name: 'BookManagement',
+                    component: () =>
+                        import ('../components/admin/content/BookManagement'),
+                },
+                {
+                    path: '/admin/user/profile',
+                    name: 'Profile',
+                    component: () =>
+                        import ('../components/admin/user/UserProfile'),
+                },
+                {
+                    path: '/admin/user/role',
+                    name: 'Role',
+                    component: () =>
+                        import ('../components/admin/user/Role'),
+                },
+            ]
         },
         {
             path: '*',
@@ -106,18 +137,13 @@ export const createRouter = routes => new Router({
             name: 'Home',
             component: Home,
             redirect: '/index',
-            children: [{
-                    path: '/index',
-                    name: 'AppIndex',
-                    component: () =>
-                        import ('../components/home/AppIndex')
-                },
-                {
-                    path: '/jotter',
-                    name: 'Jotter',
-                    component: () =>
-                        import ('../components/jotter/Articles')
-                },
+            children: [
+                // {
+                //     path: '/jotter',
+                //     name: 'Jotter',
+                //     component: () =>
+                //         import ('../components/jotter/Articles')
+                // },
                 {
                     path: '/jotter/article',
                     name: 'Article',
@@ -162,14 +188,22 @@ export const createRouter = routes => new Router({
                 requireAuth: true
             },
             children: [{
-                path: '/admin/dashboard',
-                name: 'Dashboard',
-                component: () =>
-                    import ('../components/admin/dashboard/admin/index'),
-                meta: {
-                    requireAuth: true
-                }
-            }]
+                    path: '/admin/dashboard',
+                    name: 'Dashboard',
+                    component: () =>
+                        import ('../components/admin/dashboard/admin/index'),
+                    meta: {
+                        requireAuth: true
+                    }
+                },
+                // {
+                //     path: '/admin/content/article',
+                //     name: 'ArticleManagement',
+                //     component: () =>
+                //         import ('../components/admin/content/ArticleManagement'),
+                // },
+
+            ]
         },
         {
             path: '*',

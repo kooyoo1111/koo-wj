@@ -86,7 +86,7 @@
                 articleTitle: this.article.articleTitle,
                 articleContentMd: value,
                 articleContentHtml: render,
-                articleAbstract: this.article.articleContentMd.substring(0,20),
+                articleAbstract: this.article.articleContentMd.substring(0,40),
                 articleCover: this.article.articleCover,
                 articleDate: d.getTime()
               }).then(resp => {
