@@ -2,107 +2,61 @@
 
 ---
 
-![lisense](https://img.shields.io/github/license/Antabot/White-Jotter)
-![release](https://img.shields.io/github/v/release/Antabot/White-Jotter)
+这是一个简单的前后端分离项目，主要采用 Vue.js + SpringBoot 技术栈开发。
 
-感谢原开源 https://github.com/Antabot/White-Jotter
-基于RESTful前后端分离的博客项目，主要采用 Vue.js + SpringBoot 技术栈开发。做一点点随意diy～
+是在原github开源项目上进行了一些个人风格的diy和功能调整。
+https://github.com/kooyoo1111/koo-wj
+
+另外引入了element组件库和iconfont图标库帮助美化界面。
 
 # 整体效果
 
-## 首页
+## 1.首页
 
-作为展示页面，包括开发这个项目的主要参考资料、近期更新和 Slogan
+作为展示页面，包括开发这个项目的主要参考资料、近期更新和博主个人信息
 
-![首页](https://img-blog.csdnimg.cn/20190403215932913.png)
+用element组件库和阿里的iconfont图标库自己做了一下，感觉又学习了一个☝️
 
-## 图书馆
 
-提供图书信息展示功能
+## 2.登录页面
+使用shiro进行安全认证，（一直以为是跨域的问题来着
 
-![图书馆](https://i.loli.net/2019/12/03/AGLbIupct68ThBD.png)
+![登录页面](https://i.loli.net/2019/04/14/5cb2fd5b78ae7.png)
 
-## 笔记本
-
-提供笔记、博文展示功能
-
-![笔记本首页.png](https://i.loli.net/2020/01/20/VAsOapuWriB6RFT.png)
-
-![文章内容.png](https://i.loli.net/2020/01/20/DQgbpy2LKhiZc4x.png)
-
-## 后台管理
+## 3.后台管理
 
 包含 dashboard、内容管理、用户及权限管理等
 
-![后台](https://img-blog.csdnimg.cn/20191202200516251.png)
+将源项目中从后端数据库获取菜单改为前端生成的静态菜单，因为个人所需的功能比较单一不需要根据不同用户的权限展示不同菜单。
 
-# 主要技术栈
 
-## 前端
+# 技术栈
 
-1.Vue.js  
+## 1.前端技术栈
+
+1.Vue  
 2.ElementUI  
-3.axios
+3.axios   
 
-## 后端
+## 2.后端技术栈
 
 1.Spring Boot  
-2.Apache Shiro
-3.Apache Log4j2
-4.Spring Data JPA
-5.Spring Data Redis
+2.Spring Data + JPA 
+3.MySQL  ，mybatis
+4.Shiro
 
-## 数据库
-
-1.MySQL  
-2.Redis
-
-# 部署方法
-
-1.clone 项目到本地
-
-`git clone git@github.com:kooyoo1111/koo-wj.git`
-
-2.在 mysql 中创建数据库 `wj`，运行项目，将自动注入数据。如需关闭此功能，请将 `application.properties` 中的 `spring.datasource.initialization-mode=always` 代码删除。
-
-数据库完整脚本 `wj.sql` 放在后端项目的 `src\main\resources` 目录下，也可根据需要自行在 MySQL 中执行数据库脚本。
-
-运行项目前请启动 Redis 服务，端口为 6379（默认端口），密码为空。
-
-3.数据库配置在后端项目的 `src\main\resources` 目录下的`application.properties` 文件中，mysql 版本为 8.0.15 。
-
-4.在 IntelliJ IDEA 中运行后端项目，为了保证项目成功运行，可以右键点击 `pom.xml` 选择 maven -> reimport ，并重启项目
-
-至此，服务端就启动成功了，同时，运行前端项目，访问 `http://localhost:8080` ，即可进入登录页面，默认账号是 `admin`，密码是 `123`
-
-如果要做二次开发，请继续看第五、六步。
-
-5.进入前端项目根目录中，在命令行依次输入如下命令：
-
-```
-# 安装依赖
-npm install
-
-# 在 localhost:8080 启动项目
-npm run dev
-
-```
-
-由于在 `wj-vue` 项目中已经配置了端口转发，将数据转发到 SpringBoot 上，因此项目启动之后，在浏览器中输入 `http://localhost:8080` 就可以访问我们的前端项目了，所有的请求通过端口转发将数据传到 SpringBoot 中（注意此时不要关闭 SpringBoot 项目）。
-
-6.最后可以用 `WebStorm` 等工具打开 `wj-vue`项目，继续开发，开发完成后，当项目要上线时，依然进入到 `wj-vue` 目录，然后执行如下命令：
-
-```
-npm run build
-```
+# 项目部署
+选择阿里云服务器centos系统进行部署。
+上传文件用filezilla的sftp协议，事先手动搭建ecs服务器上的ftp站点。
+在云服务器中使用docker分别部署springboot，mysql，mybatis，
+使用nginx部署前端Vue应用。
 
 该命令执行成功之后， `wj-vue` 目录下生成一个 `dist` 文件夹，可以将该文件夹中的两个文件 `static` 和 `index.html` 拷贝到 `wj` 项目中 `resources/static/` 目录下，然后直接运行 `wj` 项目，访问 `http://localhost:8443` ，实际上是把前端打包后作为静态文件，但不推荐使用这种方式。
 
 前后端分离部署的方式详见教程第十篇：[「图片上传与项目的打包部署」](https://learner.blog.csdn.net/article/details/97619312)
 
 # 教程
-
-我在 CSDN 上分享了开发这个项目的教程，有兴趣的小伙伴可以点击下面的链接查看。
+ 
 
 1.[项目简介](https://blog.csdn.net/Neuf_Soleil/article/details/88925013)
 
@@ -147,12 +101,12 @@ npm run build
 # 重要更新
 
 ## 2020
-
+04-05 拆分前后端项目  
 01-20 利用开源 markdown 编辑器实现文章展示与管理模块
-
+ 
 ---
 
-## 2019
+## 2019 
 
 12-01 实现功能级权限控制  
 11-30 利用 vue-elment-admin 项目完善后台界面设计  
