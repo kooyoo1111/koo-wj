@@ -1,3 +1,4 @@
 Test local
 
-Local change
+
+Local change merged
